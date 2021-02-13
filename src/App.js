@@ -42,28 +42,29 @@ getPokemon();
         {pokemonData.map((data) => {
           return(
             <div className="container">
-              <img src="" alt=""/>
-              <div className="divtable">
-                <div className="divtableBody"></div>
-                <div className="divtableRow">
-                  <div className="divtableCell">Type</div>
-                  <div className="divtableCell">{pokemonType}</div>
-                </div>
-                <div className="divtableRow">
-                  <div className="divtableCell">Type</div>
-                  <div className="divtableCell">{""}{Math.round(data.height * 3.9)}</div>
-                </div>
-                <div className="divtableRow">
-                  <div className="divtableCell">weight</div>
-                  <div className="divtableCell">{" "} {Math.round(data.weight / 4.3)} lbs</div>
-                </div>
-                <div className="divtableRow">
-                  <div className="divtableCell">Type</div>
-                  <div className="divtableCell">{pokemonType}</div>
+              <img src={data.sprites["front_default"]} />
+              <div className="divTable">
+                <div className="divTableBody">
+                  <div className="divTableRow">
+                    <div className="divTableCell">Type</div>
+                    <div className="divTableCell">{pokemonType}</div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">height</div>
+                    <div className="divTableCell">{""}{Math.round(data.height * 3.9)}</div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">weight</div>
+                    <div className="divTableCell">{" "} {Math.round(data.weight / 4.3)} lbs</div>
+                  </div>
+                  <div className="divTableRow">
+                    <div className="divTableCell">Number of battle</div>
+                    <div className="divTableCell">{data.game_indices.length}</div>
+                  </div>
                 </div>
               </div>
             </div>
-          )
+          );
         })}
     </div>
   );
